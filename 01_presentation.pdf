@@ -1,0 +1,257 @@
+\documentclass{beamer}
+\usetheme{default}
+
+\usepackage{listings}
+\usepackage[english,russian]{babel}
+
+
+\title{Подмножества. Управляющие конструкции. Функции. 
+	Область видимости. Дата и время
+}
+\author{TeXstudio Team}
+\begin{document}
+	
+	
+\begin{frame}[plain]
+    \maketitle
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Типы данных в R}
+    Язык R работает со следующими типами данных:
+    
+    \begin{itemize}
+    	\item[*] numeric – переменные, содержащие целочисленные значения (integer), действительные числа (double) и комплексные числа (complex);
+    \begin{verbatim}
+    
+    double_value <- 290.7
+    	
+    double_value <- 290
+    
+    integer_value <- 165L
+    
+    complex_value <- 8 + 5i
+    \end{verbatim}
+      
+    
+
+   \end{itemize} 
+\end{frame}   
+\begin{frame}[fragile]
+	\frametitle{Типы данных в R}
+	\begin{itemize}
+	\item[*] logical – переменные, содержащие логические значения: FALSE (сокращенно F) и TRUE (T);
+		\begin{verbatim}
+			
+		is_monday <- F
+		
+		bool_t <- TRUE	
+		\end{verbatim}	     
+    \item[*] character – текстовые переменные (отдельные значения таких переменных задаются в двойных либо одинарных кавычках);
+    
+        \begin{verbatim}
+        	
+    text_value <- "Hello, Word"
+    
+    char_value <- 'A'
+    
+		\end{verbatim}
+	\end{itemize}    
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Векторы}
+	Векторы – это одномерный объект, которые могут хранить числовые, текстовые или логические значения (комбинации не допускаются)
+	\begin{verbatim}
+		a <- c(1, 2, 5, 3, 6, -2, 4)
+		
+		b <- c("one", "two", "three", "four")
+		
+		c <- c(TRUE, FALSE, TRUE, TRUE, FALSE)
+	\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Матрицы}
+Матрица – это двумерный массив данных, в котором все элементы имеют один и тот же тип (числовой, текстовый или логический). Матрицы создаются при помощи функции matrix. Общий синтаксис этой функции:
+\begin{verbatim}
+mymatrix <- matrix(
+    вектор, 
+    nrow=число строк, 
+    ncol=число столбцов, 
+    byrow=логическое значение, 
+    dimnames=list(текстовый вектор с названиями строк, 
+    текстовый вектор с названиями столбцов)
+)
+\end{verbatim}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Подмножества}
+	Функция subset() – позволяет выбрать подбвыборку данных на основе какого-либо условия. 
+	
+	Вот два примера:
+	{\fontsize{8}{9}\selectfont
+\begin{verbatim}
+		
+	newdata <- subset(leadership, age >= 35 | age < 23, select=c(q1, q2, q3, q4))
+	            
+	newdata <- subset(leadership, gender=="M" \& age > 25, select=gender:q4)
+\end{verbatim}}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Управляющие конструкции}
+	Разновидности условных конструкций:
+	\begin{itemize}
+	\item[*]if условный оператор if-else выполняет инструкцию, если заданное условие верно. Также есть возможность выполнить другую инструкцию, если условие не верно.
+	
+	\item[*]ifelse - компактная и векторизованная версия оператора if-else.
+	
+	\item[*]switch - оператор выбора switch выбирает инструкцию для выполнения в зависимости от значения выражения expr. Он имеет следующий синтаксис: switch(expr, ...) где многоточие (...) означает инструкции, соответствующие возможным значениям expr
+	\end{itemize}
+\end{frame}	
+
+\begin{frame}{Числовые и текстовые функции}
+	Математические функции:
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{|p{4cm}|p{10cm}|}  % l-влево, c-по центру, r-
+	
+		\hline
+		abs(x) & Модуль \\
+				\hline
+		sqrt(x) & Квадратный корень \\
+				\hline
+		ceiling(x) &  Ближайшее целое число, не меньшее, чем x \\
+				\hline
+		floor(x) &  Ближайшее целое число, не большее, чем x \\
+				\hline
+		trunk(x) & Целое число, полученное округлением x в сторону нуля \\
+				\hline
+		round(x, digits=n) & Округляет x до заданного числа знаков n после запятой \\
+				\hline
+		signif(x, digits=n) & Округляет x до заданного числа n значащих цифр \\
+				\hline
+	
+	\end{tabular}
+}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Числовые и текстовые функции}
+	
+	Статистические функции:
+	
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|p{4cm}|p{10cm}|}  % l-влево, c-по центру, r-
+			
+			\hline
+			mean(x) & Среднее арифметическое \\
+			\hline
+			median(x) & Медиана \\
+			\hline
+			sd(x) &  Стандартное отклонение \\
+			\hline
+			var(x) & Дисперсия \\
+			\hline
+			quantile(x, probs) & Квантили, где x – числовой вектор, для которого вычисляются квантили, а probs – числовой вектор с вероятностями в диапазоне [0; 1] \\
+			\hline
+			range(x) & Размах значений \\
+			\hline
+			sum(x) & Сумма \\
+			\hline
+			
+		\end{tabular}
+}		
+	
+	
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+		\frametitle{Пользовательские функции}
+		\begin{verbatim}
+		y <- 10  # Глобальная переменная
+		
+		my_function <- function(x) {
+			result <- x + y  # y находится в глобальной области!
+			return(result)
+		}
+		
+		my_function(5)  # → 15
+		\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Область видимости}
+	\begin{verbatim}
+		x <- "глобальная"
+		
+		outer_func <- function() {
+			x <- "внешняя"
+			
+			inner_func <- function() {
+				x <- "локальная"
+				print(x)  # Найдет "локальную"
+			}
+			inner_func()
+		}
+	\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Дата и время}
+	\begin{verbatim}
+	     as.Date(x, "input_format")
+    \end{verbatim} 	
+	где x – это дата в текстовом формате, а input\_format определяет формат представления даты
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Циклы}
+	Конструкция цикла for выполняет инструкцию statement для каждого значения в последовательности seq. Она имеет следующий синтаксис:
+	\begin{verbatim}
+	for (var in seq) {
+	    statement
+	}
+    \end{verbatim}
+	Следующий код:
+	\begin{verbatim}
+	for (i in 1:5)  {
+	    print("Hello World")
+	}
+\end{verbatim}
+	выведет строку Hello World 5 раз.
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Циклы}
+	Конструкция цикла while повторно выполняет инструкцию, пока заданное условие остается истинным. Она имеет следующий синтаксис:
+	\begin{verbatim}
+	while (cond) {
+		statement
+	}
+    \end{verbatim}
+	Следующий код:
+\begin{verbatim}	
+	i <- 5
+	while (i > 0) {
+		print("Hello World"); 
+		i <- i - 1
+	}
+\end{verbatim}	
+	тоже выведет строку Hello World 5 раз.
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Название}
+\end{frame}
+
+
+\end{document}
