@@ -1,0 +1,467 @@
+\documentclass[10pt]{beamer}
+
+\usetheme{metropolis}
+\usepackage{appendixnumberbeamer}
+\usepackage[english,russian]{babel}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Подмножества. Управляющие конструкции. Функции. 
+	Область видимости. Дата и время}
+\subtitle{Язык программирования R}
+\date{}
+\author{Иркутский государственный университет}
+
+
+\begin{document}
+	\maketitle
+	
+	\begin{frame}[fragile]
+		\frametitle{Типы данных в R}
+		Язык R работает со следующими типами данных:
+		\begin{itemize}
+			\item[*] numeric – переменные, содержащие целочисленные значения (integer), действительные числа (double) и комплексные числа (complex);
+			\begin{verbatim}
+				
+				double_value <- 290.7
+				
+				double_value <- 290
+				
+				integer_value <- 165L
+				
+				complex_value <- 8 + 5i
+			\end{verbatim}	
+		\end{itemize} 
+	\end{frame} 
+	
+	\begin{frame}[fragile]
+		\frametitle{Типы данных в R}
+		\begin{itemize}
+			\item[*] logical – переменные, содержащие логические значения: FALSE (сокращенно F) и TRUE (T);
+			\begin{verbatim}
+				
+				is_monday <- F
+				
+				bool_t <- TRUE	
+			\end{verbatim}	     
+			\item[*] character – текстовые переменные (отдельные значения таких переменных задаются в двойных либо одинарных кавычках);
+			
+			\begin{verbatim}
+				
+				text_value <- "Hello, Word"
+				
+				char_value <- 'A'
+				
+			\end{verbatim}
+		\end{itemize}    
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Векторы}
+		Векторы – это одномерный объект, которые могут хранить числовые, текстовые или логические значения (комбинации не допускаются)
+		\begin{verbatim}
+			protein_id = c("INS", "GH1", "IL6", "TNF", "ACTB")
+			
+			expression_level = c(45.8, 12.3, 8.9, 6.7, 280.5),
+			
+			is_secreted = c(TRUE, TRUE, TRUE, TRUE, FALSE)
+		\end{verbatim}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Операции над векторами}
+		\begin{verbatim}
+			expression_sample1 <- c(15.2, 8.7, 23.4, 150.2)
+			expression_sample2 <- c(18.5, 9.2, 25.1, 145.8)
+			
+			# Сложение - общая экспрессия
+			total_expr <- expr_sample1 + expr_sample2
+			
+			# Вычитание - разница экспрессии
+			diff_expr <- expr_sample1 - expr_sample2
+			
+			# Объединение
+			all_expression <- c(expression_sample1, expression_sample2)
+		\end{verbatim}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Матрицы}
+		Матрица – это двумерный массив данных, в котором все элементы имеют один и тот же тип (числовой, текстовый или логический). Матрицы создаются при помощи функции matrix. Общий синтаксис этой функции:
+		\begin{verbatim}
+			my_matrix <- matrix(
+			вектор, 
+			nrow=число строк, 
+			ncol=число столбцов, 
+			byrow=логическое значение, 
+			dimnames=list(текстовый вектор с названиями строк, 
+			текстовый вектор с названиями столбцов)
+			)
+		\end{verbatim}
+		
+		
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		
+		
+		\frametitle{Массивы}
+		Массивы — это объекты данных, которые могут хранить данные в более чем двух измерениях. Массивы создаются при помощи функции array:
+		
+		\begin{verbatim}
+			my_array <- array(vector, dimensions, dimnames)
+		\end{verbatim}
+		где vector – это вектор с данными, dimensions – числовой вектор, определяющий размеры измерений, а dimnames – необязательный список названий измерений.	
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Таблицы данных}
+		Таблицы данных – это основной класс объектов R, используемых для хранения данных.  Таблица данных создается при помощи функции data.frame():
+		\begin{verbatim}
+			my_data <- data.frame(col1, col2, col3, ...)
+		\end{verbatim}
+		где – col1, col2, col3, ... это векторы любого типа (текстового, числового или логического), которые станут столбцами таблицы.	
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		
+		
+		\frametitle{Пример таблицы данных}
+		
+		\begin{verbatim}
+			genome_data <- data.frame(
+			gene_id = c("BRCA1", "TP53", "EGFR", "HBB"),
+			chromosome = c("17", "17", "7", "11"),
+			start_position = c(43044295, 7668402, 55019017, 5248232),
+			end_position = c(43170245, 7687550, 55211628, 5249264),
+			strand = c("+", "-", "+", "-"),
+			expression = c(15.2, 8.7, 23.4, 150.2)
+			)
+		\end{verbatim}	
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Пример таблицы данных}
+		\metroset{block=fill}
+		\begin{exampleblock}{Просмотр данных:}
+			\begin{verbatim}
+				print("Геномные данные:")
+				print(genome_data)
+			\end{verbatim}
+		\end{exampleblock}
+		
+		\begin{exampleblock}{Базовый анализ:}
+			\begin{verbatim}
+				cat("Всего генов:", nrow(genome_data), "\n")
+				cat("Уникальные хромосомы:", unique(genome_data$chromosome), "\n")
+				cat("Средняя экспрессия:", round(mean(genome_data$expression), 1), "\n")
+			\end{verbatim}
+		\end{exampleblock}
+		
+		\begin{exampleblock}{Гены на хромосоме 17:}
+			\begin{verbatim}
+				cat("Гены на хромосоме 17:")
+				print(genome_data[genome_data$chromosome == "17", "gene_id"])
+			\end{verbatim}
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Подмножества}
+		Функция subset() – позволяет выбрать подбвыборку данных на основе какого-либо условия.
+		{\fontsize{8}{9}\selectfont
+			\metroset{block=fill}
+			\begin{exampleblock}{Пример:}
+				\begin{verbatim}
+					chr17_high_expr <- subset(genome_data, 
+					chromosome == "17" & expression > 10)
+					
+					low_expr_genes <- subset(genome_data, 
+					expression < 10, 
+					select = c(gene_id, chromosome, expression))\end{verbatim}
+			\end{exampleblock}
+		}
+		
+		
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Подмножества}
+		Подмножества данных можно выбирать на основе любой структуры данных. Например, на основе векторов:
+		{\fontsize{8}{9}\selectfont
+			\metroset{block=fill}
+			\begin{exampleblock}{Пример:}
+				\begin{verbatim}
+					gene_expression <- c(15.2, 8.7, 23.4, 150.2, 5.3)
+					names(gene_expression) <- c("BRCA1", "TP53", "EGFR", "HBB", "CFTR")
+					
+					# Выборка по индексам
+					gene_expression[3]           # EGFR: 23.4
+					gene_expression[c(2,4)]      # TP53: 8.7, HBB: 150.2
+					
+					# Выборка по условиям
+					gene_expression[gene_expression > 20]    # гены с экспрессией > 20
+					gene_expression[gene_expression < 10]   # гены с экспрессией < 10
+					
+					# Выборка по именам генов
+					gene_expression[c("BRCA1", "HBB")]       # конкретные гены\end{verbatim}
+			\end{exampleblock}
+		}
+		
+		
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Подмножества}
+		Подмножества данных также можно выбирать на основе матриц:
+		{\fontsize{8}{9}\selectfont
+			\metroset{block=fill}
+			\begin{exampleblock}{Пример:}
+				\begin{verbatim}
+					expr_matrix <- matrix(
+					c(25.4, 18.9, 32.1, 45.2, 12.8, 8.7, 150.8, 95.3, 120.5), 
+					nrow = 3,
+					byrow = TRUE,
+					dimnames = list(
+					c("SYP", "GAD1", "GFAP"), 
+					c("Cortex", "Cerebellum", "Hippocampus")))
+					
+					marker_genes <- expr_matrix[c("SYP", "GFAP"), ]
+					custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cerebellum", "Hippocampus")]
+					high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GFAP", ] > 100]          
+					
+				\end{verbatim}
+			\end{exampleblock}
+		}
+		
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Управляющие конструкции}
+		Разновидности условных конструкций:
+		\begin{itemize}
+			\item if условный оператор if-else выполняет инструкцию, если заданное условие верно. Также есть возможность выполнить другую инструкцию, если условие не верно.
+			
+			\item ifelse - компактная и векторизованная версия оператора if-else.
+			
+			\item switch - оператор выбора switch выбирает инструкцию для выполнения в зависимости от значения выражения expr. Он имеет следующий синтаксис: switch(expr, ...) где многоточие (...) означает инструкции, соответствующие возможным значениям expr
+		\end{itemize}
+	\end{frame}	
+	
+	\begin{frame}[fragile]
+		\frametitle{Управляющие конструкции}
+		Разновидности условных конструкций:
+		\begin{itemize}
+			\item \textbf{if} - условный оператор if-else выполняет инструкцию, если заданное условие верно. Также есть возможность выполнить другую инструкцию, если условие не верно.
+		\end{itemize}
+		
+		\metroset{block=fill}
+		\begin{exampleblock}{Пример:}
+			{\footnotesize
+				\begin{verbatim}
+					# Классификация экспрессии гена
+					expression_level <- 45.2
+					
+					if (expression_level > 100) {
+						category <- "очень высокая"
+					} else if (expression_level > 30) {
+						category <- "умеренная"
+					} else {
+						category <- "низкая"
+					}
+					
+				\end{verbatim}
+			}
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Управляющие конструкции}
+		Разновидности условных конструкций:
+		\begin{itemize}
+			\item \textbf{ifelse} - компактная и векторизованная версия оператора if-else.
+		\end{itemize}
+		
+		\metroset{block=fill}
+		\begin{exampleblock}{Пример:}
+			{\footnotesize
+				\begin{verbatim}
+					genes <- c("SYP", "GAD1", "GFAP")
+					expression <- c(25.4, 45.2, 150.8)
+					
+					# Классификация всех генов
+					expression_category <- ifelse(expression > 100, "высокая",
+					ifelse(expression > 30, "умеренная", "низкая"))
+					
+					result <- data.frame(genes, expression, expression_category)
+				\end{verbatim}
+			}
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Управляющие конструкции}
+		Разновидности условных конструкций:
+		\begin{itemize}
+			\item \textbf{switch} - оператор выбора switch выбирает инструкцию для выполнения в зависимости от значения выражения expr. Он имеет следующий синтаксис: switch(expr, ...) где многоточие (...) означает инструкции, соответствующие возможным значениям expr.
+		\end{itemize}
+		
+		\metroset{block=fill}
+		\begin{exampleblock}{Пример:}
+			{\footnotesize
+				\begin{verbatim}
+					# Выбор анализа по типу данных
+					analysis_type <- "expression"
+					
+					result <- switch(analysis_type,
+					"expression" = "Анализ экспрессии генов",
+					"methylation" = "Анализ метилирования", 
+					"Неизвестный тип анализа")
+				\end{verbatim}
+			}
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Числовые и текстовые функции}
+		Математические функции:
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|p{4cm}|p{10cm}|}  % l-влево, c-по центру, r-
+				
+				\hline
+				abs(x) & Модуль \\
+				\hline
+				sqrt(x) & Квадратный корень \\
+				\hline
+				ceiling(x) &  Ближайшее целое число, не меньшее, чем x \\
+				\hline
+				floor(x) &  Ближайшее целое число, не большее, чем x \\
+				\hline
+				trunk(x) & Целое число, полученное округлением x в сторону нуля \\
+				\hline
+				round(x, digits=n) & Округляет x до заданного числа знаков n после запятой \\
+				\hline
+				signif(x, digits=n) & Округляет x до заданного числа n значащих цифр \\
+				\hline
+				
+			\end{tabular}
+		}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Числовые и текстовые функции}
+		
+		Статистические функции:
+		
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|p{4cm}|p{10cm}|}  % l-влево, c-по центру, r-
+				
+				\hline
+				mean(x) & Среднее арифметическое \\
+				\hline
+				median(x) & Медиана \\
+				\hline
+				sd(x) &  Стандартное отклонение \\
+				\hline
+				var(x) & Дисперсия \\
+				\hline
+				quantile(x, probs) & Квантили, где x – числовой вектор, для которого вычисляются квантили, а probs – числовой вектор с вероятностями в диапазоне [0; 1] \\
+				\hline
+				range(x) & Размах значений \\
+				\hline
+				sum(x) & Сумма \\
+				\hline
+				
+			\end{tabular}
+		}		
+		
+		
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Пользовательские функции}
+		\begin{verbatim}
+			classify_expression <- function(expression_value) {
+				if (expression_value > 100) {
+					return("очень высокая")
+				} else if (expression_value > 50) {
+					return("высокая")
+				} else if (expression_value > 10) {
+					return("умеренная") 
+				} else {
+					return("низкая")
+				}
+			}
+		\end{verbatim}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Область видимости}
+		\begin{verbatim}
+			x <- "глобальная"
+			
+			outer_func <- function() {
+				x <- "внешняя"
+				
+				inner_func <- function() {
+					x <- "локальная"
+					print(x)  # Найдет "локальную"
+				}
+				inner_func()
+			}
+		\end{verbatim}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Дата и время}
+		\begin{verbatim}
+			as.Date(x, "input_format")
+		\end{verbatim} 	
+		где x – это дата в текстовом формате, а input\_format определяет формат представления даты
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Циклы}
+		Конструкция цикла for выполняет инструкцию statement для каждого значения в последовательности seq. Она имеет следующий синтаксис:
+		\begin{verbatim}
+			for (var in seq) {
+				statement
+			}
+		\end{verbatim}
+		Следующий код:
+		\begin{verbatim}
+			for (i in 1:5)  {
+				print("Hello World")
+			}
+		\end{verbatim}
+		выведет строку Hello World 5 раз.
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Циклы}
+		Конструкция цикла while повторно выполняет инструкцию, пока заданное условие остается истинным. Она имеет следующий синтаксис:
+		\begin{verbatim}
+			while (cond) {
+				statement
+			}
+		\end{verbatim}
+		Следующий код:
+		\begin{verbatim}	
+			i <- 5
+			while (i > 0) {
+				print("Hello World"); 
+				i <- i - 1
+			}
+		\end{verbatim}	
+		тоже выведет строку Hello World 5 раз.
+	\end{frame}
+	
+	
+\end{document}

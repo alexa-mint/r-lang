@@ -1,0 +1,16 @@
+\frametitle{Циклы}
+		Конструкция цикла while повторно выполняет инструкцию, пока заданное условие остается истинным. Она имеет следующий синтаксис:
+		\begin{verbatim}
+			while (cond) {
+				statement
+			}
+		\end{verbatim}
+		Следующий код:
+		\begin{verbatim}	
+			i <- 5
+			while (i > 0) {
+				print("Hello World");
+				i <- i - 1
+			}
+		\end{verbatim}	
+		тоже выведет строку Hello World 5 раз.
