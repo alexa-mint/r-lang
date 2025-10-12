@@ -13,8 +13,10 @@
 \usepackage{xspace}
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 
-\title{Подмножества. Управляющие конструкции. Функции. 
-	Область видимости. Дата и время}
+\definecolor{mybackground}{RGB}{255,255,255}
+\definecolor{myprimary}{RGB}{25,100,200}
+
+\title{Типы данных. Подмножества. Векторизованные операции}
 \subtitle{Язык программирования R}
 \date{}
 \author{Иркутский государственный университет}
@@ -65,7 +67,7 @@
 	
 	\begin{frame}[fragile]
 		\frametitle{Векторы}
-		Векторы – это одномерный объект, которые могут хранить числовые, текстовые или логические значения (комбинации не допускаются)
+		Векторы – это одномерные объект, которые могут хранить числовые, текстовые или логические значения (комбинации не допускаются)
 		\begin{verbatim}
 			protein_id = c("INS", "GH1", "IL6", "TNF", "ACTB")
 			
@@ -91,6 +93,37 @@
 			all_expression <- c(expression_sample1, expression_sample2)
 		\end{verbatim}
 	\end{frame}
+	
+	
+	\begin{frame}[fragile]
+		\frametitle{Факторы}
+		Фактор - специальный тип данных для представления порядковых и номинальных переменных с фиксированным набором возможных значений
+		\begin{verbatim}
+			expr_lvl <- factor(c("low", "high", "medium", "low", "high"),
+			levels = c("low", "medium", "high"), 
+			ordered = TRUE
+			)
+		\end{verbatim}
+		где levels - это уникальные категории или возможные значения, которые может принимать фактор, ordered - флаг порядка категорий
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Операции над факторами}
+		\begin{verbatim}
+			# Изменить порядок уровней
+			response <- factor(c("yes", "no", "yes", "maybe"))
+			response <- factor(response, levels = c("no", "maybe", "yes"))
+			
+			# Поменять порядок
+			response_rev <- factor(response, levels = rev(levels(response)))
+			
+			# Объединение факторов
+			factor1 <- factor(c("A", "B", "A"))
+			factor2 <- factor(c("B", "C", "A"))
+			combined <- c(factor1, factor2)		
+		\end{verbatim}
+	\end{frame}
+	
 	
 	\begin{frame}[fragile]
 		\frametitle{Матрицы}
@@ -148,62 +181,157 @@
 	\end{frame}
 	
 	\begin{frame}[fragile]
-		\frametitle{Пример таблицы данных}
-		\metroset{block=fill}
-		\begin{exampleblock}{Просмотр данных:}
+		\frametitle{Операции с таблицами данных}
+		rbind() - объединяет два набора данных по вертикали (по строкам):
+		{\fontsize{7}{8}\selectfont	
 			\begin{verbatim}
-				print("Геномные данные:")
-				print(genome_data)
+				# Первый набор данных - экспрессия генов
+				gene_expression <- data.frame(
+				gene_id = c("TP53", "BRCA1", "EGFR"),
+				sample_A = c(15.2, 8.7, 25.4),
+				sample_B = c(18.9, 7.3, 28.1)
+				)
+				
+				# Второй набор данных - дополнительная экспрессия
+				dop_expression <- data.frame(
+				gene_id = c("AKT1", "PTEN"),
+				sample_A = c(22.3, 9.8),
+				sample_B = c(24.1, 8.9)
+				)
+				
+				# Объединяем два набора данных по экспрессии генов
+				all_expression <- rbind(gene_expression, more_expression)
+				
+				gene_id sample_A sample_B
+				1    TP53     15.2     18.9
+				2   BRCA1      8.7      7.3
+				3   EGFR     25.4     28.1
+				4   AKT1     22.3     24.1
+				5   PTEN      9.8      8.9		
 			\end{verbatim}
-		\end{exampleblock}
+		}	
 		
-		\begin{exampleblock}{Базовый анализ:}
-			\begin{verbatim}
-				cat("Всего генов:", nrow(genome_data), "\n")
-				cat("Уникальные хромосомы:", unique(genome_data$chromosome), "\n")
-				cat("Средняя экспрессия:", round(mean(genome_data$expression), 1), "\n")
-			\end{verbatim}
-		\end{exampleblock}
-		
-		\begin{exampleblock}{Гены на хромосоме 17:}
-			\begin{verbatim}
-				cat("Гены на хромосоме 17:")
-				print(genome_data[genome_data$chromosome == "17", "gene_id"])
-			\end{verbatim}
-		\end{exampleblock}
 	\end{frame}
 	
 	
-	\begin{frame}
-		
-		
+	\begin{frame}[fragile]
 		\frametitle{Операции с таблицами данных}
+		cbind() - объединяет две матрицы или таблицы по горизонтали (по столбцам):
+		{\fontsize{7}{8}\selectfont	
+			\begin{verbatim}
+				# Первый набор данных - экспрессия генов
+				gene_expression <- data.frame(
+				gene_id = c("TP53", "BRCA1", "EGFR"),
+				sample_A = c(15.2, 8.7, 25.4),
+				sample_B = c(18.9, 7.3, 28.1)
+				)
+				
+				# Добавляем данные по третьему образцу
+				sample_C_data <- data.frame(
+				sample_C = c(16.8, 9.2, 26.7)
+				)
+				
+				# Объединяем с исходными данными
+				expression_with_C <- cbind(gene_expression, sample_C_data)
+				
+				gene_id sample_A sample_B sample_C
+				1    TP53     15.2     18.9     16.8
+				2   BRCA1      8.7      7.3      9.2
+				3   EGFR     25.4     28.1     26.7		
+			\end{verbatim}
+		}	
 		
-		Добавить примеры работы с датафреймами
 	\end{frame}
 	
 	\begin{frame}[fragile]
+		\frametitle{Списки}
+		Cписок – это упорядоченная коллекция объектов. Список может объединять разные объекты вне зависимости от их типов. К примеру, список может одновременно содержать векторы, матрицы, таблицы данных и другие списки.
+		\begin{verbatim}
+			my_list <- list(объект1, объект2, ...)
+			
+			gene_info <- list(
+			gene_name = "TP53",
+			chromosome = 17,
+			position = c(7668402, 7687550),
+			)
+		\end{verbatim}
+	\end{frame}
+	
+	
+	\begin{frame}[fragile]
+		\frametitle{Чтение табличных данных}
+		Функция read.table() позволяет импортировать данные из текстовых файлов с разделителями. Некоторые параметры этой функции:
+		\begin{verbatim}
+			file
+			header
+			nrows
+			sep
+			dec
+			skip
+			na.strings
+			colClasses
+			stringAsFactors
+		\end{verbatim}
+	\end{frame}
+	
+	
+	\begin{frame}[fragile]
+		\frametitle{Пример использования функции read.table()}
+		\begin{verbatim}
+			data <- read.table("data.txt", 
+			header = TRUE,        # есть заголовок
+			sep = "\t",           # разделитель - табуляция
+			stringsAsFactors = FALSE)  # не преобразовывать строки в факторы
+			
+			# Параметры по умолчанию (для CSV)
+			data <- read.table("data.csv", 
+			header = TRUE,
+			sep = ",",
+			dec = ".")
+		\end{verbatim}
+	\end{frame}
+	
+	
+	\begin{frame}[fragile]
 		\frametitle{Подмножества}
-		Функция subset() – позволяет выбрать подбвыборку данных на основе какого-либо условия.
-		{\fontsize{8}{9}\selectfont
-			\metroset{block=fill}
-			\begin{exampleblock}{Пример:}
-				\begin{verbatim}
-					chr17_high_expr <- subset(genome_data, 
-					chromosome == "17" & expression > 10)
-					
-					low_expr_genes <- subset(genome_data, 
-					expression < 10, 
-					select = c(gene_id, chromosome, expression))\end{verbatim}
-			\end{exampleblock}
-		}
+		Квадратные скобки [ — сохраняют класс исходного объекта при извлечении подмножества и поддерживают выбор произвольного количества элементов.
+		
+		Двойные квадратные скобки [[ — предназначены для извлечения единичного элемента из списка или таблицы данных, при этом возвращаемый объект может иметь другой класс.
+		
+		Оператор \$ — обеспечивает доступ к элементам списка или таблицы данных по имени, аналогично работе оператора [[.
+		
 		
 		
 	\end{frame}
+	
 	
 	\begin{frame}[fragile]
 		\frametitle{Подмножества}
 		Подмножества данных можно выбирать на основе любой структуры данных. Например, на основе векторов:
+		{\fontsize{8}{9}\selectfont
+			\metroset{block=fill}
+			\begin{exampleblock}{Пример:}
+				\begin{verbatim}
+					gene_expression <- c(15.2, 8.7, 23.4, 150.2, 5.3)
+					names(gene_expression) <- c("BRCA1", "TP53", "EGFR", "HBB", "CFTR")
+					
+					# Выборка по индексам
+					gene_expression[3]           # EGFR: 23.4
+					gene_expression[c(2,4)]      # TP53: 8.7, HBB: 150.2
+					
+					# Выборка по условиям
+					gene_expression[gene_expression > 20]    # гены с экспрессией > 20
+					gene_expression[gene_expression < 10]   # гены с экспрессией < 10
+					
+					# Выборка по именам генов
+					gene_expression[c("BRCA1", "HBB")]       # конкретные гены\end{verbatim}
+			\end{exampleblock}
+		}	
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Подмножества}
+		Пример выбора подмножества на основе списка:
 		{\fontsize{8}{9}\selectfont
 			\metroset{block=fill}
 			\begin{exampleblock}{Пример:}
@@ -252,6 +380,105 @@
 		
 		
 	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Подмножества}
+		Подмножество на основе таблицы данных:
+		{\fontsize{8}{9}\selectfont
+			\metroset{block=fill}
+			\begin{exampleblock}{Пример:}
+				\begin{verbatim}
+					expr_matrix <- matrix(
+					c(25.4, 18.9, 32.1, 45.2, 12.8, 8.7, 150.8, 95.3, 120.5), 
+					nrow = 3,
+					byrow = TRUE,
+					dimnames = list(
+					c("SYP", "GAD1", "GFAP"), 
+					c("Cortex", "Cerebellum", "Hippocampus")))
+					
+					marker_genes <- expr_matrix[c("SYP", "GFAP"), ]
+					custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cerebellum", "Hippocampus")]
+					high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GFAP", ] > 100]          
+					
+				\end{verbatim}
+			\end{exampleblock}
+		}
+		
+		
+	\end{frame}
+	
+	
+	\begin{frame}[fragile]
+		\frametitle{Обработка пропущенных значений}
+		Подмножество на основе таблицы данных:
+		{\fontsize{8}{9}\selectfont
+			\metroset{block=fill}
+			\begin{exampleblock}{Пример:}
+				\begin{verbatim}
+					expr_matrix <- matrix(
+					c(25.4, 18.9, 32.1, 45.2, 12.8, 8.7, 150.8, 95.3, 120.5), 
+					nrow = 3,
+					byrow = TRUE,
+					dimnames = list(
+					c("SYP", "GAD1", "GFAP"), 
+					c("Cortex", "Cerebellum", "Hippocampus")))
+					
+					marker_genes <- expr_matrix[c("SYP", "GFAP"), ]
+					custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cerebellum", "Hippocampus")]
+					high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GFAP", ] > 100]          
+					
+				\end{verbatim}
+			\end{exampleblock}
+		}
+		
+		
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Подмножества}
+		Функция subset() – позволяет выбрать подбвыборку данных на основе какого-либо условия.
+		{\fontsize{8}{9}\selectfont
+			\metroset{block=fill}
+			\begin{exampleblock}{Пример:}
+				\begin{verbatim}
+					chr17_high_expr <- subset(genome_data, 
+					chromosome == "17" & expression > 10)
+					
+					low_expr_genes <- subset(genome_data, 
+					expression < 10, 
+					select = c(gene_id, chromosome, expression))\end{verbatim}
+			\end{exampleblock}
+		}
+		
+		
+	\end{frame}
+	
+	
+	\begin{frame}[fragile]
+		\frametitle{Векторизованные операции}
+		Подмножества данных также можно выбирать на основе матриц:
+		\begin{verbatim}
+			expr_matrix <- matrix(
+			c(25.4, 18.9, 32.1, 45.2, 12.8, 8.7, 150.8, 95.3, 120.5), 
+			nrow = 3,
+			byrow = TRUE,
+			dimnames = list(
+			c("SYP", "GAD1", "GFAP"), 
+			c("Cortex", "Cerebellum", "Hippocampus")))
+			
+			marker_genes <- expr_matrix[c("SYP", "GFAP"), ]
+			custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cerebellum", "Hippocampus")]
+			high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GFAP", ] > 100]          
+			
+		\end{verbatim}
+	\end{frame}
+	
+	
+	\begin{frame}[fragile]
+		\frametitle{Следующий модуль}
+		В разработке
+	\end{frame}
+	
 	
 	\begin{frame}
 		\frametitle{Управляющие конструкции}
@@ -434,8 +661,6 @@
 			as.Date(x, "input_format")
 		\end{verbatim} 	
 		где x – это дата в текстовом формате, а input\_format определяет формат представления даты
-		
-		дописать про posixct
 	\end{frame}
 	
 	\begin{frame}[fragile]
@@ -473,12 +698,6 @@
 		\end{verbatim}	
 		тоже выведет строку Hello World 5 раз.
 	\end{frame}
-	
-    \begin{frame}
-	    \frametitle{Функции apply для обработки данных}
-	Вместо циклов while и for предпочтительно использовать функции apply.
-	добавить примеры функций
-    \end{frame}	
 	
 	
 \end{document}
