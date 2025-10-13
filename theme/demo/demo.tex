@@ -13,8 +13,7 @@
 \usepackage{xspace}
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 
-\definecolor{mybackground}{RGB}{255,255,255}
-\definecolor{myprimary}{RGB}{25,100,200}
+\setbeamercolor{background canvas}{bg=white}
 
 \title{Типы данных. Подмножества. Векторизованные операции}
 \subtitle{Язык программирования R}
@@ -244,6 +243,36 @@
 	\end{frame}
 	
 	\begin{frame}[fragile]
+		\frametitle{Операции с таблицами данных}
+		merge() - объединяет таблицы по ключу:
+		{\fontsize{7}{8}\selectfont	
+			\begin{verbatim}
+				# Таблица с экспрессией генов
+				expression_data <- data.frame(
+				gene_id = c("TP53", "BRCA1", "EGFR", "MYC", "AKT1"),
+				expression = c(15.2, 8.7, 25.4, 12.1, 18.9),
+				sample = "sample_A"
+				)
+				
+				# Таблица с мутациями
+				mutation_data <- data.frame(
+				gene_id = c("TP53", "BRCA1", "EGFR", "PTEN"),
+				mutation_count = c(3, 1, 2, 1),
+				mutation_type = c("missense", "frameshift", "nonsense", "missense")
+				)
+				
+				# Общие гены
+				inner_join <- merge(expression_data, mutation_data, by = "gene_id")
+				  gene_id expression   sample mutation_count mutation_type
+				1   BRCA1        8.7 sample_A              1    frameshift
+				2    EGFR       25.4 sample_A              2      nonsense
+				3    TP53       15.2 sample_A              3      missense	
+			\end{verbatim}
+		}	
+		
+	\end{frame}
+	
+	\begin{frame}[fragile]
 		\frametitle{Списки}
 		Cписок – это упорядоченная коллекция объектов. Список может объединять разные объекты вне зависимости от их типов. К примеру, список может одновременно содержать векторы, матрицы, таблицы данных и другие списки.
 		\begin{verbatim}
@@ -261,17 +290,27 @@
 	\begin{frame}[fragile]
 		\frametitle{Чтение табличных данных}
 		Функция read.table() позволяет импортировать данные из текстовых файлов с разделителями. Некоторые параметры этой функции:
+		{\fontsize{6}{7}\selectfont
 		\begin{verbatim}
-			file
-			header
-			nrows
-			sep
-			dec
-			skip
-			na.strings
-			colClasses
-			stringAsFactors
+file - путь к файлу
+			
+header - логическое значение, указывает наличие строки с названиями колонок в начале файла
+			
+nrows - максимальное количество строк для чтения (-1 означает все строки)
+			
+sep - символ-разделитель колонок в файле
+			
+dec - символ, используемый как десятичный разделитель в числах
+			
+skip - количество строк в начале файла для пропуска перед чтением данных
+			
+na.strings - вектор строк, которые интерпретируются как пропущенные значения (NA)
+			
+colClasses - вектор, определяющий классы данных для каждой колонки
+			
+stringsAsFactors - логическое значение, указывает должны ли строковые колонки преобразовываться в факторы
 		\end{verbatim}
+	}
 	\end{frame}
 	
 	
@@ -304,53 +343,30 @@
 		
 	\end{frame}
 	
+
 	
 	\begin{frame}[fragile]
 		\frametitle{Подмножества}
 		Подмножества данных можно выбирать на основе любой структуры данных. Например, на основе векторов:
 		{\fontsize{8}{9}\selectfont
-			\metroset{block=fill}
-			\begin{exampleblock}{Пример:}
+			
+			
 				\begin{verbatim}
-					gene_expression <- c(15.2, 8.7, 23.4, 150.2, 5.3)
-					names(gene_expression) <- c("BRCA1", "TP53", "EGFR", "HBB", "CFTR")
+gene_expression <- c(15.2, 8.7, 23.4, 150.2, 5.3)
+names(gene_expression) <- c("BRCA1", "TP53", "EGFR", "HBB", "CFTR")
 					
-					# Выборка по индексам
-					gene_expression[3]           # EGFR: 23.4
-					gene_expression[c(2,4)]      # TP53: 8.7, HBB: 150.2
+# Выборка по индексам
+gene_expression[3]           # EGFR: 23.4
+gene_expression[c(2,4)]      # TP53: 8.7, HBB: 150.2
 					
-					# Выборка по условиям
-					gene_expression[gene_expression > 20]    # гены с экспрессией > 20
-					gene_expression[gene_expression < 10]   # гены с экспрессией < 10
+# Выборка по условиям
+gene_expression[gene_expression > 20]    # гены с экспрессией > 20
+gene_expression[gene_expression < 10]   # гены с экспрессией < 10
 					
-					# Выборка по именам генов
-					gene_expression[c("BRCA1", "HBB")]       # конкретные гены\end{verbatim}
-			\end{exampleblock}
-		}	
-	\end{frame}
-	
-	\begin{frame}[fragile]
-		\frametitle{Подмножества}
-		Пример выбора подмножества на основе списка:
-		{\fontsize{8}{9}\selectfont
-			\metroset{block=fill}
-			\begin{exampleblock}{Пример:}
-				\begin{verbatim}
-					gene_expression <- c(15.2, 8.7, 23.4, 150.2, 5.3)
-					names(gene_expression) <- c("BRCA1", "TP53", "EGFR", "HBB", "CFTR")
-					
-					# Выборка по индексам
-					gene_expression[3]           # EGFR: 23.4
-					gene_expression[c(2,4)]      # TP53: 8.7, HBB: 150.2
-					
-					# Выборка по условиям
-					gene_expression[gene_expression > 20]    # гены с экспрессией > 20
-					gene_expression[gene_expression < 10]   # гены с экспрессией < 10
-					
-					# Выборка по именам генов
-					gene_expression[c("BRCA1", "HBB")]       # конкретные гены\end{verbatim}
-			\end{exampleblock}
-		}
+# Выборка по именам генов
+gene_expression[c("BRCA1", "HBB")]       # конкретные гены\end{verbatim}
+			
+}
 		
 		
 	\end{frame}
@@ -359,23 +375,21 @@
 		\frametitle{Подмножества}
 		Подмножества данных также можно выбирать на основе матриц:
 		{\fontsize{8}{9}\selectfont
-			\metroset{block=fill}
-			\begin{exampleblock}{Пример:}
+			
 				\begin{verbatim}
-					expr_matrix <- matrix(
-					c(25.4, 18.9, 32.1, 45.2, 12.8, 8.7, 150.8, 95.3, 120.5), 
-					nrow = 3,
-					byrow = TRUE,
-					dimnames = list(
-					c("SYP", "GAD1", "GFAP"), 
-					c("Cortex", "Cerebellum", "Hippocampus")))
+expr_matrix <- matrix(
+    c(25.4, 18.9, 32.1, 45.2, 12.8, 8.7, 150.8, 95.3, 120.5), 
+    nrow = 3,
+    byrow = TRUE,
+    dimnames = list(
+    c("SYP", "GAD1", "GFAP"), 
+    c("Cortex", "Cerebellum", "Hippocampus")))
 					
-					marker_genes <- expr_matrix[c("SYP", "GFAP"), ]
-					custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cerebellum", "Hippocampus")]
-					high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GFAP", ] > 100]          
+marker_genes <- expr_matrix[c("SYP", "GFAP"), ]
+custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cerebellum", "Hippocampus")]
+high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GFAP", ] > 100]          
 					
 				\end{verbatim}
-			\end{exampleblock}
 		}
 		
 		
@@ -384,51 +398,30 @@
 	\begin{frame}[fragile]
 		\frametitle{Подмножества}
 		Подмножество на основе таблицы данных:
-		{\fontsize{8}{9}\selectfont
-			\metroset{block=fill}
-			\begin{exampleblock}{Пример:}
+		{\fontsize{7}{7}\selectfont
 				\begin{verbatim}
-					expr_matrix <- matrix(
-					c(25.4, 18.9, 32.1, 45.2, 12.8, 8.7, 150.8, 95.3, 120.5), 
-					nrow = 3,
-					byrow = TRUE,
-					dimnames = list(
-					c("SYP", "GAD1", "GFAP"), 
-					c("Cortex", "Cerebellum", "Hippocampus")))
+gene_data <- data.frame(
+    gene_name = c("TP53", "BRCA1", "EGFR", "MYC", "AKT1", "PTEN"),
+    expression = c(15.2, 8.7, 25.4, 12.1, 18.9, 9.5),
+    chromosome = c("chr17", "chr17", "chr7", "chr8", "chr14", "chr10"),
+    is_oncogene = c(FALSE, FALSE, TRUE, TRUE, TRUE, FALSE),
+    mutation_count = c(3, 1, 2, 0, 1, 2)
+)
 					
-					marker_genes <- expr_matrix[c("SYP", "GFAP"), ]
-					custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cerebellum", "Hippocampus")]
-					high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GFAP", ] > 100]          
+# 1. Подмножество по строкам и столбцам - Строки 2-4, колонки gene_name и expression
+subset1 <- gene_data[2:4, c("gene_name", "expression")]
 					
-				\end{verbatim}
-			\end{exampleblock}
-		}
-		
-		
-	\end{frame}
-	
-	
-	\begin{frame}[fragile]
-		\frametitle{Обработка пропущенных значений}
-		Подмножество на основе таблицы данных:
-		{\fontsize{8}{9}\selectfont
-			\metroset{block=fill}
-			\begin{exampleblock}{Пример:}
-				\begin{verbatim}
-					expr_matrix <- matrix(
-					c(25.4, 18.9, 32.1, 45.2, 12.8, 8.7, 150.8, 95.3, 120.5), 
-					nrow = 3,
-					byrow = TRUE,
-					dimnames = list(
-					c("SYP", "GAD1", "GFAP"), 
-					c("Cortex", "Cerebellum", "Hippocampus")))
+# 2. Подмножество по условию (высокая экспрессия)
+high_expression <- gene_data[gene_data$expression > 15, ]
 					
-					marker_genes <- expr_matrix[c("SYP", "GFAP"), ]
-					custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cerebellum", "Hippocampus")]
-					high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GFAP", ] > 100]          
+# 3. Подмножество по нескольким условиям (онкогены с мутациями)
+sample1 <- gene_data[gene_data$is_oncogene & gene_data$mutation_count > 0, ]
 					
-				\end{verbatim}
-			\end{exampleblock}
+# 4. Подмножество с оператором ИЛИ
+sample2 <- gene_data[gene_data$chromosome == "chr17" | gene_data$expression > 20, ]
+					
+# 5. Подмножество по индексам строк
+selected_rows <- gene_data[c(1, 3, 5), ]   \end{verbatim}
 		}
 		
 		
@@ -438,8 +431,7 @@
 		\frametitle{Подмножества}
 		Функция subset() – позволяет выбрать подбвыборку данных на основе какого-либо условия.
 		{\fontsize{8}{9}\selectfont
-			\metroset{block=fill}
-			\begin{exampleblock}{Пример:}
+			
 				\begin{verbatim}
 					chr17_high_expr <- subset(genome_data, 
 					chromosome == "17" & expression > 10)
@@ -447,7 +439,7 @@
 					low_expr_genes <- subset(genome_data, 
 					expression < 10, 
 					select = c(gene_id, chromosome, expression))\end{verbatim}
-			\end{exampleblock}
+			
 		}
 		
 		
@@ -455,20 +447,28 @@
 	
 	
 	\begin{frame}[fragile]
+		\frametitle{Обработка пропущенных значений}
+		В R NA (Not Available) означает отсутствие значения, тогда как NaN (Not a Number) указывает на неопределенный результат числовой операции, например, \(0/0\). NA может применяться к любым типам данных (числовым и символьным) и означает, что данные были, но не были измерены или записаны. NaN возникает только в числовых вычислениях и обозначает результат, который нельзя представить как число. 
+		
+		
+	\end{frame}
+	
+	
+	
+	
+	\begin{frame}[fragile]
 		\frametitle{Векторизованные операции}
-		Подмножества данных также можно выбирать на основе матриц:
+		Векторизация — это возможность применять операции ко всему вектору сразу, без использования явных циклов. Это одна из ключевых особенностей R, которая делает код эффективным и читаемым.:
 		\begin{verbatim}
-			expr_matrix <- matrix(
-			c(25.4, 18.9, 32.1, 45.2, 12.8, 8.7, 150.8, 95.3, 120.5), 
-			nrow = 3,
-			byrow = TRUE,
-			dimnames = list(
-			c("SYP", "GAD1", "GFAP"), 
-			c("Cortex", "Cerebellum", "Hippocampus")))
+			# Создаем векторы
+			x <- 1:5
+			y <- 6:10
 			
-			marker_genes <- expr_matrix[c("SYP", "GFAP"), ]
-			custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cerebellum", "Hippocampus")]
-			high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GFAP", ] > 100]          
+			# Векторизованные арифметические операции
+			print(x + y)   # Сложение
+			print(x * 2)   # Умножение на скаляр
+			print(y / x)   # Деление
+			print(x ^ 2)   # Возведение в степень       
 			
 		\end{verbatim}
 	\end{frame}

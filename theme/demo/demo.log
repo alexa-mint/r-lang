@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.4)  12 OCT 2025 20:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.4)  13 OCT 2025 22:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1360,32 +1360,32 @@ File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
 \openout1 = `demo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 24.
 LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 2
-5.
+4.
 
 (C:\Users\alles\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    ... okay on input line 24.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1447,63 +1447,63 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 25.
+Package hyperref Info: Link coloring OFF on input line 24.
  (demo.out) (demo.out)
 \@outlinefile=\write5
 \openout5 = `demo.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 25.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 25.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 24.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 25.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 25.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 25.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 25.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 25.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 25.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 25.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 25.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 25.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 25.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 25.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 25.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 25.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 25.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 25.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 25.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 25.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 25.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 25.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 25.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 24.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 24.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 2
-5.
+4.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 2
-5.
+4.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 25.
+ut line 24.
 
 (C:\Users\alles\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-b
 asic-dictionary-English.dict
@@ -1529,13 +1529,13 @@ Dictionary: translator-numbers-dictionary, Language: English
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \th on input line 25.
+LaTeX Info: Redefining \th on input line 24.
 
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.9).
 
 (demo.nav)
-Overfull \vbox (13.79993pt too high) detected at line 26
+Overfull \vbox (13.79993pt too high) detected at line 25
  []
 
 [1
@@ -1631,7 +1631,7 @@ Overfull \hbox (7.63322pt too wide) in paragraph at lines 14--14
 \openout4 = `demo.vrb'.
 
  (demo.vrb)
-Overfull \vbox (24.87949pt too high) detected at line 214
+Overfull \vbox (24.87949pt too high) detected at line 213
  []
 
 [12
@@ -1655,9 +1655,9 @@ Overfull \vbox (24.87949pt too high) detected at line 214
 \openout4 = `demo.vrb'.
 
  (demo.vrb
-Overfull \hbox (44.37425pt too wide) in paragraph at lines 13--13
-[]   \T2A/cmtt/m/n/10 stringsAsFactors = FALSE)  # не преобразовывать строки в 
-факторы[] 
+Overfull \hbox (27.31592pt too wide) in paragraph at lines 22--22
+[]\T2A/cmtt/m/n/6 stringsAsFactors - логическое значение, указывает должны ли с
+троковые колонки преобразовыватьс€ в факторы[] 
  []
 
 ) [16
@@ -1665,7 +1665,13 @@ Overfull \hbox (44.37425pt too wide) in paragraph at lines 13--13
 ]
 \openout4 = `demo.vrb'.
 
- (demo.vrb) [17
+ (demo.vrb
+Overfull \hbox (44.37425pt too wide) in paragraph at lines 13--13
+[]   \T2A/cmtt/m/n/10 stringsAsFactors = FALSE)  # не преобразовывать строки в 
+факторы[] 
+ []
+
+) [17
 
 ]
 \openout4 = `demo.vrb'.
@@ -1681,15 +1687,9 @@ Overfull \hbox (44.37425pt too wide) in paragraph at lines 13--13
 \openout4 = `demo.vrb'.
 
  (demo.vrb
-Overfull \hbox (49.62297pt too wide) in paragraph at lines 19--19
-[]     \T2A/cmtt/m/n/8 custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cereb
-ellum", "Hippocampus")][] 
- []
-
-
-Overfull \hbox (7.13335pt too wide) in paragraph at lines 19--19
-[]     \T2A/cmtt/m/n/8 high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GF
-AP", ] > 100][] 
+Overfull \hbox (28.37816pt too wide) in paragraph at lines 18--18
+[]\T2A/cmtt/m/n/8 custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cerebellum
+", "Hippocampus")][] 
  []
 
 ) [20
@@ -1698,15 +1698,15 @@ AP", ] > 100][]
 \openout4 = `demo.vrb'.
 
  (demo.vrb
-Overfull \hbox (49.62297pt too wide) in paragraph at lines 19--19
-[]     \T2A/cmtt/m/n/8 custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cereb
-ellum", "Hippocampus")][] 
+Overfull \hbox (5.00822pt too wide) in paragraph at lines 26--26
+[]\T2A/cmtt/m/n/7 # 1. ѕодмножество по строкам и столбцам - —троки 2-4, колонки
+ gene_name и expression[] 
  []
 
 
-Overfull \hbox (7.13335pt too wide) in paragraph at lines 19--19
-[]     \T2A/cmtt/m/n/8 high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GF
-AP", ] > 100][] 
+Overfull \hbox (1.29039pt too wide) in paragraph at lines 26--26
+[]\T2A/cmtt/m/n/7 sample2 <- gene_data[gene_data$chromosome == "chr17" | gene_d
+ata$expression > 20, ][] 
  []
 
 ) [21
@@ -1714,47 +1714,39 @@ AP", ] > 100][]
 ]
 \openout4 = `demo.vrb'.
 
- (demo.vrb
-Overfull \hbox (49.62297pt too wide) in paragraph at lines 19--19
-[]     \T2A/cmtt/m/n/8 custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cereb
-ellum", "Hippocampus")][] 
- []
-
-
-Overfull \hbox (7.13335pt too wide) in paragraph at lines 19--19
-[]     \T2A/cmtt/m/n/8 high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GF
-AP", ] > 100][] 
- []
-
-) [22
-
-]
-\openout4 = `demo.vrb'.
-
- (demo.vrb) [23
+ (demo.vrb) [22
 
 ]
 \openout4 = `demo.vrb'.
 
  (demo.vrb
-Overfull \hbox (7.63322pt too wide) in paragraph at lines 16--16
-[]   \T2A/cmtt/m/n/10 c(25.4, 18.9, 32.1, 45.2, 12.8, 8.7, 150.8, 95.3, 120.5),
-[] 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+
+(C:\Users\alles\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+
+(C:\Users\alles\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
+ut line 2.
+
+(C:\Users\alles\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathk
+erncmss.fd
+File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+)) [23
+
+]
+\openout4 = `demo.vrb'.
+
+ (demo.vrb)
+Overfull \vbox (1.87961pt too high) detected at line 474
  []
 
-
-Overfull \hbox (123.10503pt too wide) in paragraph at lines 16--16
-[]   \T2A/cmtt/m/n/10 custom_subset <- expr_matrix[c("GAD1", "GFAP"), c("Cerebe
-llum", "Hippocampus")][] 
- []
-
-
-Overfull \hbox (70.61784pt too wide) in paragraph at lines 16--16
-[]   \T2A/cmtt/m/n/10 high_gfap_regions <- expr_matrix["GFAP", expr_matrix["GFA
-P", ] > 100][] 
- []
-
-) [24
+[24
 
 ]
 \openout4 = `demo.vrb'.
@@ -1789,27 +1781,7 @@ Overfull \vbox (13.08377pt too high) detected at line 520
 
  (demo.vrb) [29
 
-]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 592
-.
-
-(C:\Users\alles\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 592
-.
-
-(C:\Users\alles\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 592.
-
-(C:\Users\alles\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathk
-erncmss.fd
-File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
-thkerncmss.
-) [30
+] [30
 
 ] [31
 
@@ -1821,7 +1793,8 @@ thkerncmss.
 ]
 \openout4 = `demo.vrb'.
 
- (demo.vrb) [33
+ (demo.vrb)
+[33
 
 ]
 \openout4 = `demo.vrb'.
@@ -1861,28 +1834,31 @@ Package rerunfilecheck Info: File `demo.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37542 strings out of 474486
- 895621 string characters out of 5743755
+ 37552 strings out of 474486
+ 895862 string characters out of 5743755
  1938542 words of memory out of 5000000
- 58957 multiletter control sequences out of 15000+600000
- 572158 words of font info for 65 fonts, out of 8000000 for 9000
+ 58966 multiletter control sequences out of 15000+600000
+ 573294 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,13n,123p,1873b,697s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss
-1000.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\
-latt0800.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi
-600\lasx1000.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
-/dpi525\latt0800.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
--t2a/dpi600\lass0700.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/l
-h/lh-t2a/dpi600\latt1000.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfo
-ur/lh/lh-t2a/dpi600\lass1000.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/
-ljfour/lh/lh-t2a/dpi600\lasx1200.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts
-/pk/ljfour/lh/lh-t2a/dpi600\lass0900.pk> <C:\Users\alles\AppData\Local\MiKTeX\f
-onts/pk/ljfour/lh/lh-t2a/dpi600\lass1200.pk> <C:\Users\alles\AppData\Local\MiKT
-eX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lasx1440.pk>
-Output written on demo.pdf (36 pages, 214836 bytes).
+ 128i,13n,123p,1873b,699s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lasx10
+00.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcss1000.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi
+600\latt0800.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
+/dpi450\latt0800.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
+-t2a/dpi525\latt0800.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfour/l
+h/lh-t2a/dpi600\lass0700.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/ljfo
+ur/lh/lh-t2a/dpi600\latt1000.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts/pk/
+ljfour/lh/lh-t2a/dpi600\lass1000.pk> <C:\Users\alles\AppData\Local\MiKTeX\fonts
+/pk/ljfour/lh/lh-t2a/dpi600\lasx1200.pk> <C:\Users\alles\AppData\Local\MiKTeX\f
+onts/pk/ljfour/lh/lh-t2a/dpi600\lass0900.pk> <C:\Users\alles\AppData\Local\MiKT
+eX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1200.pk> <C:\Users\alles\AppData\Local\
+MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lasx1440.pk><C:/Users/alles/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/alles/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb>
+Output written on demo.pdf (36 pages, 253856 bytes).
 PDF statistics:
- 776 PDF objects out of 1000 (max. 8388607)
+ 871 PDF objects out of 1000 (max. 8388607)
  73 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
