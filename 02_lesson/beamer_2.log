@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.21)  22 NOV 2025 13:40
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.21)  22 NOV 2025 19:15
  restricted system commands enabled.
 **beamer_2.tex
 (./beamer_2.tex
@@ -1706,8 +1706,22 @@ LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
+Overfull \vbox (19.10541pt too high) detected at line 151
+ []
+
+
 
 [7
+
+]
+\openout4 = beamer_2.vrb
+ (./beamer_2.vrb)
+Overfull \vbox (39.47717pt too high) detected at line 180
+ []
+
+
+
+[8
 
 ]
 
@@ -1756,33 +1770,24 @@ uage=dflt;+tlig;+lnum;+tnum;"
 language=dflt;+tlig;+lnum;+tnum;"
 
 LaTeX Font Info:    Font shape `TU/Carlito(6)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 163.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 163
+(Font)              scaled to size 10.95pt on input line 207.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 207
 .
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 163
+LaTeX Font Info:    Trying to load font information for U+msb on input line 207
 .
 
 (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 163.
+(Font)              scaled to size 10.95pt on input line 207.
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/it' will be
-(Font)              scaled to size 8.0pt on input line 163.
+(Font)              scaled to size 8.0pt on input line 207.
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/it' will be
-(Font)              scaled to size 6.0pt on input line 163.
-
-
-[8
-
-]
-
-Package fontspec Info: 
-(fontspec)             Carlito-Regular scale = 1.
-
+(Font)              scaled to size 6.0pt on input line 207.
 
 
 [9
@@ -1797,6 +1802,15 @@ Package fontspec Info:
 [10
 
 ]
+
+Package fontspec Info: 
+(fontspec)             Carlito-Regular scale = 1.
+
+
+
+[11
+
+]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb
 Overfull \hbox (34.3842pt too wide) in paragraph at lines 14--14
@@ -1805,12 +1819,6 @@ Overfull \hbox (34.3842pt too wide) in paragraph at lines 14--14
  []
 
 )
-
-[11
-
-]
-\openout4 = beamer_2.vrb
- (./beamer_2.vrb)
 
 [12
 
@@ -1828,6 +1836,12 @@ Overfull \hbox (34.3842pt too wide) in paragraph at lines 14--14
 
 ]
 \openout4 = beamer_2.vrb
+ (./beamer_2.vrb)
+
+[15
+
+]
+\openout4 = beamer_2.vrb
  (./beamer_2.vrb
 Overfull \hbox (6.00484pt too wide) in paragraph at lines 15--15
 []    \TU/FiraMono(0)/m/n/8 response_rev <- factor(response, levels = rev(levels
@@ -1836,13 +1850,13 @@ Overfull \hbox (6.00484pt too wide) in paragraph at lines 15--15
 
 )
 
-[15
+[16
 
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
 
-[16
+[17
 
 ]
 \openout4 = beamer_2.vrb
@@ -1854,13 +1868,13 @@ Overfull \hbox (8.10423pt too wide) in paragraph at lines 6--6
 
 )
 
-[17
+[18
 
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
 
-[18
+[19
 
 ]
 \openout4 = beamer_2.vrb
@@ -1872,25 +1886,12 @@ Overfull \hbox (9.00426pt too wide) in paragraph at lines 14--14
 
 )
 
-[19
-
-]
-\openout4 = beamer_2.vrb
- (./beamer_2.vrb)
-Overfull \vbox (31.48581pt too high) detected at line 379
- []
-
-
-
 [20
 
 ]
 \openout4 = beamer_2.vrb
- (./beamer_2.vrb
-LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 3.
-)
-Overfull \vbox (5.5465pt too high) detected at line 409
+ (./beamer_2.vrb)
+Overfull \vbox (31.5405pt too high) detected at line 431
  []
 
 
@@ -1899,8 +1900,11 @@ Overfull \vbox (5.5465pt too high) detected at line 409
 
 ]
 \openout4 = beamer_2.vrb
- (./beamer_2.vrb)
-Overfull \vbox (3.88596pt too high) detected at line 439
+ (./beamer_2.vrb
+LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 3.
+)
+Overfull \vbox (5.4918pt too high) detected at line 461
  []
 
 
@@ -1910,8 +1914,18 @@ Overfull \vbox (3.88596pt too high) detected at line 439
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
+Overfull \vbox (3.88596pt too high) detected at line 491
+ []
+
+
 
 [23
+
+]
+\openout4 = beamer_2.vrb
+ (./beamer_2.vrb)
+
+[24
 
 ]
 \openout4 = beamer_2.vrb
@@ -1924,7 +1938,7 @@ Overfull \hbox (18.0052pt too wide) in paragraph at lines 24--24
 
 )
 
-[24
+[25
 
 ]
 \openout4 = beamer_2.vrb
@@ -1936,13 +1950,13 @@ Overfull \hbox (1.20483pt too wide) in paragraph at lines 18--18
 
 )
 
-[25
+[26
 
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
 
-[26
+[27
 
 ]
 \openout4 = beamer_2.vrb
@@ -1966,7 +1980,7 @@ Overfull \hbox (10.80484pt too wide) in paragraph at lines 19--19
 
 )
 
-[27
+[28
 
 ]
 \openout4 = beamer_2.vrb
@@ -1978,7 +1992,7 @@ erebellum", "Hippocampus")][]
 
 )
 
-[28
+[29
 
 ]
 \openout4 = beamer_2.vrb
@@ -2001,28 +2015,28 @@ _data$expression > 20, ][]
  []
 
 )
-Overfull \vbox (5.70198pt too high) detected at line 607
+Overfull \vbox (5.36995pt too high) detected at line 659
  []
 
 
-
-[29
-
-]
-\openout4 = beamer_2.vrb
- (./beamer_2.vrb)
 
 [30
 
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
-Overfull \vbox (5.45656pt too high) detected at line 650
+
+[31
+
+]
+\openout4 = beamer_2.vrb
+ (./beamer_2.vrb)
+Overfull \vbox (5.45656pt too high) detected at line 702
  []
 
 
 
-[31
+[32
 
 ]
 \openout4 = beamer_2.vrb
@@ -2033,12 +2047,12 @@ Overfull \hbox (10.80484pt too wide) in paragraph at lines 21--21
  []
 
 )
-Overfull \vbox (8.54062pt too high) detected at line 678
+Overfull \vbox (8.54062pt too high) detected at line 730
  []
 
 
 
-[32
+[33
 
 ]
 \tf@nav=\write6
@@ -2060,24 +2074,24 @@ Package rerunfilecheck Info: File `beamer_2.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 30338 strings out of 476291
+ 30349 strings out of 476291
  125031,1144653 words of node,token memory allocated
  8295 words of node memory still in use:
    77 hlist, 8 vlist, 5 rule, 37 disc, 19 local_par, 277 glue, 41 kern, 179 pena
 lty, 449 glyph, 212 attribute, 70 glue_spec, 108 attribute_list, 4 write, 18 pdf
 _colorstack nodes
-   avail lists: 1:1,2:789,3:690,4:176,5:195,6:63,7:2769,8:3,9:474,10:14,11:212
- 51387 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:789,3:690,4:176,5:273,6:63,7:2769,8:3,9:474,10:14,11:212
+ 51389 multiletter control sequences out of 65536+600000
  98 fonts using 22799351 bytes
  128i,13n,139p,1874b,548s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/opentype/public/fira/FiraMono-Regular.otf><c:/
 texlive/2025/texmf-dist/fonts/truetype/google/carlito/Carlito-Regular.ttf><c:/te
 xlive/2025/texmf-dist/fonts/truetype/google/carlito/Carlito-Bold.ttf><c:/texlive
 /2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on beamer_2.pdf (32 pages, 86773 bytes).
+Output written on beamer_2.pdf (33 pages, 89633 bytes).
 
-PDF statistics: 211 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
- 65 named destinations out of 1000 (max. 131072)
+PDF statistics: 216 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
+ 67 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

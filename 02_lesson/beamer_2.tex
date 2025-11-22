@@ -127,13 +127,57 @@ results <- data.frame(
 	\begin{frame}[fragile]
 		\frametitle{Цикл repeat}
 		В \textbf{repeat} цикл повторяется до тех пор, пока в явном виде не будет вызван оператор \textbf{break}. Также можно использовать оператор \textbf{next} внутри цикла \textbf{repeat} для пропуска итерации
-		{\fontsize{9}{10}\selectfont
+		{\fontsize{8}{9}\selectfont
 			\begin{verbatim}
-				example
+    # Поиск старт-кодона ATG
+    position <- 1
+    dna <- "ACATGCTAGCATG"
+				
+    repeat {
+        if (position > nchar(dna) - 2) break
+					
+        codon <- substr(dna, position, position + 2)
+					
+        if (codon == "ATG") {
+            cat("Найден старт-кодон на позиции", position, "\n")
+            break
+        }
+					
+        position <- position + 1
+        next
+    }
 			\end{verbatim}
 		}
 	\end{frame}
 	
+
+	\begin{frame}[fragile]
+	\frametitle{Циклы и векторизация}
+	Векторизация в R работает быстрее циклов, поскольку использует оптимизированные низкоуровневые функции для обработки целых векторов данных за одну операцию.
+	{\fontsize{8}{9}\selectfont
+		\begin{verbatim}
+    # Подсчет суммы через цикл
+    sum_loop <- function(x) {
+        total <- 0
+        for(i in x) {
+            total <- total + i
+        }
+        return(total)
+    }
+			
+    x <- 1:10000000
+    system.time(sum_loop(x))
+    # >   user  system elapsed 
+    # >  0.258   0.004   0.262
+			
+    # Подсчет суммы через векторизацию
+    system.time(sum(x))
+    # >   user  system elapsed 
+    # >  0.001   0.000   0.001
+			
+		\end{verbatim}
+	}
+\end{frame}
 	
 	
 	
@@ -201,9 +245,17 @@ results <- data.frame(
 			\begin{tabular}{|p{4cm}|p{10cm}|}  % l-влево, c-по центру, r-
 				
 				\hline
-				toupper(x) & Среднее арифметическое \\
+				nchar(x) & Подсчитывает число элементов в x \\
 				\hline
-				tolower(x) & Медиана \\
+				toupper(x) & Преобразует строку x в верхний регистр \\
+				\hline
+				tolower(x) & Преобразует строку x в нижний регистр \\
+				\hline
+				paste(..., sep="") & Объединяет строки, разделяя их заданной строкой sep \\
+				\hline
+				substr(x, start, stop) & Извлекает или замещает часть текстового вектора \\
+				\hline
+				strsplit(x, sep, fixed) &  Разделяет текстовый вектор x на элементы, используя разделитель sep. При fixed=FALSE разделитель воспринимается как регулярное выражение, при fixed=TRUE — как обычная текстовая строка \\
 				\hline
 				
 				
