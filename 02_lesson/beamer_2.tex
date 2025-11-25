@@ -100,6 +100,9 @@ results <- data.frame(
 				}
 				
 				print(counts)
+				
+				# A T G C 
+				# 2 2 2 2 
 			\end{verbatim}
 		}
 	\end{frame}
@@ -120,6 +123,9 @@ results <- data.frame(
 				}
 				
 				print(counts)
+				
+				# A T G C 
+				# 2 2 2 2
 			\end{verbatim}
 		}
 	\end{frame}
@@ -201,6 +207,10 @@ results <- data.frame(
 				\hline
 				signif(x, digits=n) & Округляет x до заданного числа n значащих цифр \\
 				\hline
+				cos(x), sin(x), tan(x) & Косинус, синус и тангенс \\
+				\hline
+				log(x, base=n) & Логарифм x по основанию n \\
+				\hline
 				
 			\end{tabular}
 		}
@@ -229,7 +239,14 @@ results <- data.frame(
 				\hline
 				sum(x) & Сумма \\
 				\hline
-				
+				diff(x, lag=n) & Разности между значениями в выборке, взятыми с заданным интервалом lag. По умолчанию интервал равен 1 \\
+				\hline
+				min(x) & Минимум \\
+				\hline
+				max(x) & Максимум \\
+				\hline
+				scale(x, center=TRUE, scale=TRUE) & Значения объекта x, центрированные (center=TRUE) или стандартизированные (center=TRUE, scale=TRUE) по столбцам \\
+				\hline
 			\end{tabular}
 		}		
 		
