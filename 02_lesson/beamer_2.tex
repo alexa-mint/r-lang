@@ -282,39 +282,116 @@ results <- data.frame(
 		
 	\end{frame}
 	
+
+	
+	
+	
+	
 	\begin{frame}[fragile]
 		\frametitle{Пользовательские функции}
+		{\fontsize{8}{9}\selectfont
 		\begin{verbatim}
-			classify_expression <- function(expression_value) {
-				if (expression_value > 100) {
-					return("очень высокая")
-				} else if (expression_value > 50) {
-					return("высокая")
-				} else if (expression_value > 10) {
-					return("умеренная") 
-				} else {
-					return("низкая")
-				}
-			}
+# Функция для фильтрации генов по экспрессии и длине
+filter_genes <- function(gene_data, 
+			              min_expression = 1.0, 
+			              min_length = 1000, 
+			              chromosome = NULL) {
+				
+    # Фильтрация по уровню экспрессии
+    filtered <- gene_data[gene_data$expression >= min_expression, ]
+				
+    # Фильтрация по длине гена
+    filtered <- filtered[filtered$length >= min_length, ]
+				
+    # Фильтрация по хромосоме (если указана)
+    if (!is.null(chromosome)) {
+        filtered <- filtered[filtered$chr == chromosome, ]
+    }
+				
+return(filtered)
+}
+			
 		\end{verbatim}
+	}
 	\end{frame}
+	
+	
+	
+	\begin{frame}[fragile]
+		\frametitle{Пользовательские функции}
+		{\fontsize{8}{9}\selectfont
+			\begin{verbatim}
+# Пример использования функции
+# Создаем тестовые данные
+set.seed(42)
+genes <- data.frame(
+    gene_id = paste0("GENE", 1:100),
+    expression = runif(100, 0, 10),
+    length = sample(500:5000, 100, replace = TRUE),
+    chr = sample(c("chr1", "chr2", "chr3"), 100, replace = TRUE)
+)
+				
+# Используем функцию с разными аргументами
+filtered_genes <- filter_genes(
+    gene_data = genes,
+    min_expression = 2.5,
+    min_length = 2000
+)
+				
+# С параметрами по умолчанию
+default_filtered <- filter_genes(genes)
+			\end{verbatim}
+		}
+	\end{frame}
+	
+	
+
+	
 	
 	\begin{frame}[fragile]
 		\frametitle{Область видимости}
+\textbf{Область видимости} (scope) — это контекст, в котором переменные могут быть видимыми и доступны для использования. В R существует несколько уровней областей видимости: глобальная и локальная.
+{\fontsize{10}{10}\selectfont
 		\begin{verbatim}
-			x <- "глобальная"
-			
-			outer_func <- function() {
-				x <- "внешняя"
-				
-				inner_func <- function() {
-					x <- "локальная"
-					print(x)  # Найдет "локальную"
-				}
-				inner_func()
-			}
+    x <- "глобальная"
+
+    outer_func <- function() {
+	
+        inner_func <- function() {
+            x <- "локальная"
+            print(x)  # Найдет "локальную"
+        }
+	
+        inner_func()
+        print(x) # Найдет "глобальную"
+    }
 		\end{verbatim}
+	}
 	\end{frame}
+	
+	
+	\begin{frame}[fragile]
+		\frametitle{Работа с окружениями}
+		\textbf{Область видимости} (scope) — это контекст, в котором переменные могут быть видимыми и доступны для использования. В R существует несколько уровней областей видимости: глобальная и локальная.
+		{\fontsize{10}{10}\selectfont
+			\begin{verbatim}
+				x <- "глобальная"
+				
+				outer_func <- function() {
+					
+					inner_func <- function() {
+						x <- "локальная"
+						print(x)  # Найдет "локальную"
+					}
+					
+					inner_func()
+					print(x) # Найдет "глобальную"
+				}
+			\end{verbatim}
+		}
+	\end{frame}
+	
+	
 	
 	\begin{frame}[fragile]
 		\frametitle{Дата и время}
