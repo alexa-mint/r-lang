@@ -350,7 +350,7 @@ default_filtered <- filter_genes(genes)
 	
 	\begin{frame}[fragile]
 		\frametitle{Область видимости}
-\textbf{Область видимости} (scope) — это контекст, в котором переменные могут быть видимыми и доступны для использования. В R существует несколько уровней областей видимости: глобальная и локальная.
+\textbf{Область видимости} (scope) — это контекст, в котором переменные могут быть видимыми и доступны для использования. В языке R существует несколько уровней областей видимости: глобальная и локальная.
 {\fontsize{10}{10}\selectfont
 		\begin{verbatim}
     x <- "глобальная"
@@ -372,21 +372,27 @@ default_filtered <- filter_genes(genes)
 	
 	\begin{frame}[fragile]
 		\frametitle{Работа с окружениями}
-		\textbf{Область видимости} (scope) — это контекст, в котором переменные могут быть видимыми и доступны для использования. В R существует несколько уровней областей видимости: глобальная и локальная.
-		{\fontsize{10}{10}\selectfont
+		\textbf{Окружение} (environment) - это область памяти, где хранятся объекты (переменные, функции), созданные или загруженные в текущую сессию. R находит переменные сначала в локальном окружении, затем в родительском, а затем и выше, до базового окружения.
+		{\fontsize{8}{8}\selectfont
 			\begin{verbatim}
-				x <- "глобальная"
+    x <- 10
+    myenv <- new.env()
+    assign("x", "Hello", env=myenv)
+
+    ls()
+    [1] "myenv" "x"
+
+    ls(myenv)
+    [1] "x"
+
+    x
+    [1] 10
 				
-				outer_func <- function() {
-					
-					inner_func <- function() {
-						x <- "локальная"
-						print(x)  # Найдет "локальную"
-					}
-					
-					inner_func()
-					print(x) # Найдет "глобальную"
-				}
+    get("x", env=myenv)
+    [1] "Hello"
+    
+    myenv$x
+    [1] "Hello"
 			\end{verbatim}
 		}
 	\end{frame}
@@ -395,11 +401,54 @@ default_filtered <- filter_genes(genes)
 	
 	\begin{frame}[fragile]
 		\frametitle{Дата и время}
+		В языке R даты обычно вводятся в виде текстовых строк, а затем преобразуются в формат даты и хранятся в числовом виде. Для этого преобразования используется функция as.Date(), где x – это дата в текстовом формате, а input\_format определяет формат представления даты.
+		{\fontsize{9}{10}\selectfont
 		\begin{verbatim}
 			as.Date(x, "input_format")
+			
+			mydates <- as.Date(c("2007-06-22", "2004-02-13"))
+			
+			strDates <- c("01/05/1965", "08/16/1975")
+			dates <- as.Date(strDates, "%m/%d/%Y")
+			
+			today <- Sys.Date()
+			format(today, format="%B %d %Y")
+			
+			dob <- as.Date("1956-10-12")
+			difftime(today, dob, units="weeks")
 		\end{verbatim} 	
-		где x – это дата в текстовом формате, а input\_format определяет формат представления даты
+	}
 	\end{frame}
+	
+	
+	
+	\begin{frame}[fragile]
+		\frametitle{POSIXct и POSIXlt}
+		\textbf{POSIXct} (Calendar Time) хранит время как число секунд с 1970-01-01 00:00:00.
+		
+		\textbf{POSIXlt} (Local Time) хранит время в виде списка с отдельными полями (год, месяц, день, час и т.д.)
+		{\fontsize{8}{9}\selectfont
+			\begin{verbatim}
+				time_ct <- as.POSIXct("2024-12-16 15:30:00")
+				time_lt <- as.POSIXlt("2024-12-16 15:30:00")
+				
+				unclass(time_ct)[1]  # 1734363000
+				unclass(time_lt)[c("hour", "min", "sec")] # hour=15, min=30, sec=0 
+				
+				# Извлечение компонентов (одинаково для обоих типов)
+				format(time_ct, "%H:%M")   # "15:30"
+				format(time_lt, "%H:%M")   # "15:30"
+				
+				# Но для POSIXlt можно обратиться напрямую
+				time_lt$hour  # 15
+				time_lt$mon   # 11 (0-январь, 11-декабрь)
+			\end{verbatim} 	
+		}
+	\end{frame}
+	
+	
+	
+	
 	
 	\begin{frame}[fragile]
 		\frametitle{Факторы}

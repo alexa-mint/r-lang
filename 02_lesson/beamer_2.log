@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.21)  6 DEC 2025 18:50
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.21)  16 DEC 2025 22:16
  restricted system commands enabled.
 **beamer_2.tex
 (./beamer_2.tex
@@ -1850,20 +1850,44 @@ Overfull \vbox (3.01094pt too high) detected at line 345
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
+Overfull \vbox (24.89853pt too high) detected at line 398
+ []
+
+
 
 [15
 
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
+Overfull \vbox (8.49765pt too high) detected at line 421
+ []
+
+
 
 [16
 
 ]
 \openout4 = beamer_2.vrb
- (./beamer_2.vrb)
+ (./beamer_2.vrb
+Overfull \hbox (15.60484pt too wide) in paragraph at lines 20--20
+[]    \TU/FiraMono(0)/m/n/8 unclass(time_lt)[c("hour", "min", "sec")] # hour=15,
+ min=30, sec=0[] 
+ []
+
+)
+Overfull \vbox (4.11052pt too high) detected at line 447
+ []
+
+
 
 [17
+
+]
+\openout4 = beamer_2.vrb
+ (./beamer_2.vrb)
+
+[18
 
 ]
 \openout4 = beamer_2.vrb
@@ -1875,13 +1899,13 @@ Overfull \hbox (6.00484pt too wide) in paragraph at lines 15--15
 
 )
 
-[18
+[19
 
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
 
-[19
+[20
 
 ]
 \openout4 = beamer_2.vrb
@@ -1893,13 +1917,13 @@ Overfull \hbox (8.10423pt too wide) in paragraph at lines 6--6
 
 )
 
-[20
+[21
 
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
 
-[21
+[22
 
 ]
 \openout4 = beamer_2.vrb
@@ -1911,25 +1935,12 @@ Overfull \hbox (9.00426pt too wide) in paragraph at lines 14--14
 
 )
 
-[22
-
-]
-\openout4 = beamer_2.vrb
- (./beamer_2.vrb)
-Overfull \vbox (31.48581pt too high) detected at line 525
- []
-
-
-
 [23
 
 ]
 \openout4 = beamer_2.vrb
- (./beamer_2.vrb
-LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 3.
-)
-Overfull \vbox (5.5465pt too high) detected at line 555
+ (./beamer_2.vrb)
+Overfull \vbox (31.5405pt too high) detected at line 574
  []
 
 
@@ -1938,8 +1949,11 @@ Overfull \vbox (5.5465pt too high) detected at line 555
 
 ]
 \openout4 = beamer_2.vrb
- (./beamer_2.vrb)
-Overfull \vbox (3.88596pt too high) detected at line 585
+ (./beamer_2.vrb
+LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 3.
+)
+Overfull \vbox (5.4918pt too high) detected at line 604
  []
 
 
@@ -1949,8 +1963,18 @@ Overfull \vbox (3.88596pt too high) detected at line 585
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
+Overfull \vbox (3.94064pt too high) detected at line 634
+ []
+
+
 
 [26
+
+]
+\openout4 = beamer_2.vrb
+ (./beamer_2.vrb)
+
+[27
 
 ]
 \openout4 = beamer_2.vrb
@@ -1963,7 +1987,7 @@ Overfull \hbox (18.0052pt too wide) in paragraph at lines 24--24
 
 )
 
-[27
+[28
 
 ]
 \openout4 = beamer_2.vrb
@@ -1975,13 +1999,13 @@ Overfull \hbox (1.20483pt too wide) in paragraph at lines 18--18
 
 )
 
-[28
+[29
 
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
 
-[29
+[30
 
 ]
 \openout4 = beamer_2.vrb
@@ -2005,7 +2029,7 @@ Overfull \hbox (10.80484pt too wide) in paragraph at lines 19--19
 
 )
 
-[30
+[31
 
 ]
 \openout4 = beamer_2.vrb
@@ -2017,7 +2041,7 @@ erebellum", "Hippocampus")][]
 
 )
 
-[31
+[32
 
 ]
 \openout4 = beamer_2.vrb
@@ -2040,28 +2064,28 @@ _data$expression > 20, ][]
  []
 
 )
-Overfull \vbox (5.42464pt too high) detected at line 753
+Overfull \vbox (5.42464pt too high) detected at line 802
  []
 
 
-
-[32
-
-]
-\openout4 = beamer_2.vrb
- (./beamer_2.vrb)
 
 [33
 
 ]
 \openout4 = beamer_2.vrb
  (./beamer_2.vrb)
-Overfull \vbox (5.45656pt too high) detected at line 796
+
+[34
+
+]
+\openout4 = beamer_2.vrb
+ (./beamer_2.vrb)
+Overfull \vbox (5.45656pt too high) detected at line 845
  []
 
 
 
-[34
+[35
 
 ]
 \openout4 = beamer_2.vrb
@@ -2072,12 +2096,12 @@ Overfull \hbox (10.80484pt too wide) in paragraph at lines 21--21
  []
 
 )
-Overfull \vbox (8.54062pt too high) detected at line 824
+Overfull \vbox (8.54062pt too high) detected at line 873
  []
 
 
 
-[35
+[36
 
 ]
 \tf@nav=\write6
@@ -2099,24 +2123,24 @@ Package rerunfilecheck Info: File `beamer_2.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 30371 strings out of 476291
+ 30382 strings out of 476291
  125031,1144653 words of node,token memory allocated
  8295 words of node memory still in use:
    77 hlist, 8 vlist, 5 rule, 37 disc, 19 local_par, 277 glue, 41 kern, 179 pena
 lty, 449 glyph, 212 attribute, 70 glue_spec, 108 attribute_list, 4 write, 18 pdf
 _colorstack nodes
    avail lists: 1:1,2:789,3:690,4:176,5:273,6:63,7:2769,8:3,9:675,10:14,11:242
- 51393 multiletter control sequences out of 65536+600000
+ 51395 multiletter control sequences out of 65536+600000
  98 fonts using 22799351 bytes
  128i,13n,139p,1874b,548s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/opentype/public/fira/FiraMono-Regular.otf><c:/
 texlive/2025/texmf-dist/fonts/truetype/google/carlito/Carlito-Regular.ttf><c:/te
 xlive/2025/texmf-dist/fonts/truetype/google/carlito/Carlito-Bold.ttf><c:/texlive
 /2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on beamer_2.pdf (35 pages, 93542 bytes).
+Output written on beamer_2.pdf (36 pages, 95890 bytes).
 
-PDF statistics: 226 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 71 named destinations out of 1000 (max. 131072)
+PDF statistics: 231 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
+ 73 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
